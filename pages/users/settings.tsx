@@ -1,12 +1,13 @@
-import {Button, Input, Divider, Paper, TextField, Typography} from '@material-ui/core';
-import axios from 'axios';
 import {useState} from 'react';
+import {NextPage} from "next";
+import {Button, Divider, Input, Paper, TextField, Typography} from '@mui/material';
+import axios from 'axios';
 import {MainLayout} from '../../layouts/MainLayout';
 import {useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
 import {Api} from "../../utils/api";
 
-export default function Settings() {
+export const Settings:NextPage = () => {
     const userData = useAppSelector(selectUserData)
     const [avatarUrl, setAvatarUrl] = useState(userData.avatarUrl)
     const [fullName, setFullName] = useState(userData.fullName)

@@ -1,12 +1,8 @@
-import {Post} from '../components/Post';
+import React from "react";
+import {NextPage} from "next";
+import {ArticleResponse} from "../utils/api/types";
 import {MainLayout} from '../layouts/MainLayout';
 import {Api} from "../utils/api";
-import {ArticleResponse} from "../utils/api/types";
-import {NextPage} from "next";
-import React, {useEffect, useState} from "react";
-import {Pagination} from "@mui/material";
-import {getTotalPages} from "../utils/pagination/getTotalPages";
-import {usePagination} from "../hooks/usePagination";
 import {ArticlesList} from "../components/ArticlesList";
 
 interface HomeProps {

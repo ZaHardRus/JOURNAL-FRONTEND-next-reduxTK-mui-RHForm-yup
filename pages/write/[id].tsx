@@ -11,7 +11,7 @@ interface WritePageProps {
 const WritePage: NextPage<WritePageProps> = ({article}) => {
     return (
         <div>
-            <MainLayout className='main-layout--white' hideMenu hideComments>
+            <MainLayout className='main-layout--white' hideMenu>
                 <WriteForm data={article}/>
             </MainLayout>
         </div>

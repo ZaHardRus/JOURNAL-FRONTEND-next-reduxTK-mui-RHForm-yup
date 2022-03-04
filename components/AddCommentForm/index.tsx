@@ -1,4 +1,4 @@
-import {Button, Input} from "@material-ui/core";
+import {Button, Input} from "@mui/material";
 import styles from './AddCommetForm.module.scss'
 import {useState} from "react";
 import {Api} from "../../utils/api";
@@ -39,6 +39,5 @@ export const AddCommentForm = ({articleId, onAddComment}) => {
                 {clicked && <Button onClick={onSubmit} variant='contained' color='primary'>Отправить</Button>}
             </div>
         </div>
-
     )
 }

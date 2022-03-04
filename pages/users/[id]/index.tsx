@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {Avatar, Button, Paper, Typography} from '@mui/material';
 import {TabContext, TabList, TabPanel} from '@mui/lab';
 import Tab from '@mui/material/Tab';
-import {SettingsOutlined as SettingsIcon} from '@material-ui/icons';
+import {SettingsOutlined as SettingsIcon} from '@mui/icons-material';
 import {MainLayout} from '../../../layouts/MainLayout';
 import {Api} from "../../../utils/api";
 import {GetServerSideProps} from "next";
@@ -14,6 +14,7 @@ import {useState} from 'react';
 import {CommentsList} from "../../../components/CommentsList";
 import Box from '@mui/material/Box';
 import {ArticlesList} from '../../../components/ArticlesList';
+import {UserInfo} from "../../../components/UserInfo";
 
 
 interface ProfilePageProps {
@@ -42,40 +43,15 @@ export default function Profile({user, comments, articles, articlesCount}) {
         <MainLayout contentFullWidth>
             <Paper className='p-20'>
                 <div className="d-flex justify-between">
-                    <Avatar
-                        src={user.avatarUrl}
-                        style={{width: 300, height: 300, borderRadius: 6}}
-                    >
-                        {!!user.fullName && user?.fullName[0]}
-                    </Avatar>
-                    <div className='mb-25'>
-                        <Typography style={{fontWeight: 'bold'}} className="mt-20" variant="h4">
-                            {!!user.fullName && user.fullName}
-                        </Typography>
-                        <div>
-                            <div>
-                                <Link href={`/users/${user.id}/following`}>
-                                    <a>
-                                        <span>Подписки:</span> <span>{user.following.length}</span>
-                                    </a>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href={`/users/${user.id}/followers`}>
-                                    <a>
-                                        <span>Подписчики:</span> <span>{user.followers.length}</span>
-                                    </a>
-                                </Link>
-                            </div>
-                            <div>
-                                <span>Обо мне:</span> {user.about}
-                            </div>
-                            <div>
-                                <span>Ссылка:</span> {user.link}
-                            </div>
-
-                        </div>
-                    </div>
+                    <UserInfo
+                        id={user.id}
+                        fullName={user.fullName}
+                        following={user.following}
+                        followers={user.followers}
+                        link={user.link}
+                        about={user.about}
+                        avatarUrl={user.avatarUrl}
+                    />
                     <div>
                         {currentUser && user.id === currentUser.id &&
                             <Link href='/users/settings'>

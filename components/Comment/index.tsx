@@ -1,10 +1,9 @@
 import React from 'react';
-import {Avatar, IconButton, Menu, MenuItem, Typography} from '@material-ui/core';
-import MoreIcon from '@material-ui/icons/MoreHorizOutlined';
-
 import styles from './Comment.module.scss';
 import {UserResponse} from "../../utils/api/types";
 import {useAppSelector} from "../../redux/hooks";
+import {Avatar, IconButton, Menu, MenuItem, Typography} from '@mui/material';
+import {MoreHorizOutlined as MoreIcon} from '@mui/icons-material';
 import {selectUserData} from "../../redux/slices/user";
 import {Api} from "../../utils/api";
 
@@ -59,7 +58,6 @@ export const Comment: React.FC<CommentProps> = ({user, text, createdAt, id, onRe
             <Typography className={styles.text}>
                 {text}
             </Typography>
-
         </div>
     );
 };

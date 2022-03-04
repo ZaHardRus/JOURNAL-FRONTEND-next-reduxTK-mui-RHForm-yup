@@ -1,6 +1,6 @@
+import React from "react";
 import {MainLayout} from "../../layouts/MainLayout";
 import {UsersList} from "../../components/UsersList";
-import React from "react";
 import {Api} from "../../utils/api";
 
 export default function UsersPage({users, totalCount, keyword}) {

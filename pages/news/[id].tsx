@@ -1,8 +1,8 @@
+import React from 'react';
+import {GetServerSideProps} from "next";
 import {MainLayout} from '../../layouts/MainLayout';
 import {FullPost} from '../../components/FullPost';
-import React from 'react';
 import {PostComments} from '../../components/PostComments';
-import {GetServerSideProps} from "next";
 import {Api} from "../../utils/api";
 
 export default function Home({article}) {

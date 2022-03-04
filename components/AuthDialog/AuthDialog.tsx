@@ -1,5 +1,5 @@
-import {Dialog} from '@material-ui/core'
 import React, {useState} from "react";
+import {Dialog} from '@mui/material'
 import {AuthFormMain} from "./forms/AuthFormMain";
 import {AuthFormRegistration} from "./forms/AuthFormRegistration";
 import {AuthFormLogin} from "./forms/AuthFormLogin";

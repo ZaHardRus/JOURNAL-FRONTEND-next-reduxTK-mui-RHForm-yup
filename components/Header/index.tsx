@@ -1,18 +1,13 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import styles from './Header.module.scss';
-import {Avatar, Button, IconButton, Paper} from '@material-ui/core';
-import {
-    AccountCircleOutlined as UserIcon,
-    ExpandMoreOutlined as ArrowBottom,
-    Menu as MenuIcon,
-} from '@material-ui/icons';
+import {Avatar, Button, IconButton, Paper} from '@mui/material';
+import {ArrowCircleDown as ArrowIcon, Menu as MenuIcon, PersonOutline as UserIcon} from '@mui/icons-material';
 import {AuthDialog} from "../AuthDialog/AuthDialog";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
 import {setLeftMenu} from "../../redux/slices/layout";
 import {SearchBlock} from "../SearchBlock";
-import {theme} from "../../theme";
 
 export const Header: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -35,7 +30,7 @@ export const Header: React.FC = () => {
         <div className={styles.headerWrapper}>
             <Paper classes={{root: styles.root}} square elevation={8}>
                 <div className={styles.leftSide}>
-                    <IconButton style={{color:'#fff'}} onClick={toggleLeftMenu}>
+                    <IconButton style={{color: '#fff'}} onClick={toggleLeftMenu}>
                         <MenuIcon/>
                     </IconButton>
                     <Link href="/">
@@ -62,11 +57,11 @@ export const Header: React.FC = () => {
                                 >
                                     {userData.fullName[0]}
                                 </Avatar>
-                                <ArrowBottom style={{color:'#fff'}}/>
+                                <ArrowIcon style={{color: '#fff'}}/>
                             </a>
                         </Link>
                         : <div className={styles.loginButton} onClick={handleClickOpen}>
-                            <UserIcon color='secondary'/>
+                            <UserIcon style={{color: '#fff'}}/>
                             Войти
                         </div>
                     }
