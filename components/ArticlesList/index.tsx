@@ -8,9 +8,10 @@ interface ArticlesListProps {
     articles: Array<ArticleResponse> | []
     count: number
     requestHandler: (take: number, currentPage: number) => Promise<[Array<ArticleResponse>, number]>
+    userId:number
 }
 
-export const ArticlesList: React.FC<ArticlesListProps> = ({articles, count, requestHandler}) => {
+export const ArticlesList: React.FC<ArticlesListProps> = ({articles, count, requestHandler, userId}) => {
     const {
         take,
         currentPage,
@@ -31,7 +32,7 @@ export const ArticlesList: React.FC<ArticlesListProps> = ({articles, count, requ
             const [articles] = await requestHandler(take, currentPage)
             setArrayArticles(articles)
         })()
-    }, [currentPage])
+    }, [currentPage,userId])
 
     return (
         <>

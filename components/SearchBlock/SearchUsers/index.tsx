@@ -1,8 +1,6 @@
 import styles from "../SearchBlock.module.scss";
-import {SearchOutlined as SearchIcon, Send} from "@material-ui/icons";
-import SearchOffIcon from '@mui/icons-material/SearchOff';
-import {Avatar, IconButton} from "@material-ui/core";
-import {List, ListItem, Paper} from "@mui/material";
+import {SearchOff as SearchOffIcon, SearchOutlined as SearchIcon, Send} from "@mui/icons-material";
+import {Avatar, IconButton, List, ListItem, Paper} from "@mui/material";
 import Link from "next/link";
 import {FollowButton} from "../../FollowButton";
 import React from "react";
@@ -12,13 +10,13 @@ export const SearchUsers = ({usersData, searchHandler, searchStr, setSearchStr, 
         <div>
             <div className={styles.searchWrapper}>
                 <div className={styles.searchBlock}>
-                    <SearchIcon />
+                    <SearchIcon/>
                     <input value={searchStr} onChange={e => setSearchStr(e.target.value)} placeholder="Поиск"/>
                 </div>
-                <IconButton style={{color:'#fff'}} onClick={searchHandler}>
+                <IconButton style={{color: '#fff'}} onClick={searchHandler}>
                     <Send/>
                 </IconButton>
-                <IconButton style={{color:'#fff'}} onClick={toggleOption}>
+                <IconButton style={{color: '#fff'}} onClick={toggleOption}>
                     <SearchOffIcon/>
                 </IconButton>
             </div>

@@ -2,7 +2,8 @@ import axios, {AxiosInstance} from "axios";
 import Cookies, {parseCookies} from 'nookies';
 import {GetServerSidePropsContext, NextPageContext} from "next";
 import {
-    ArticleResponse, CommentResponse,
+    ArticleResponse,
+    CommentResponse,
     CreateArticleDto,
     CreateCommentDto,
     CreateUserDto,
@@ -90,7 +91,7 @@ export const ArticleService = (instance: AxiosInstance) => ({
         const {data} = await instance.get<ArticleResponse>(`articles/search/?take=${take}&page=${page}&title=${title}`)
         return data
     },
-    async getArticlesByUserId(userId: number,take:number = 10, page:number = 1):Promise<[Array<ArticleResponse>,number]> {
+    async getArticlesByUserId(userId: number, take: number = 10, page: number = 1): Promise<[Array<ArticleResponse>, number]> {
         const {data} = await instance.get(`articles/u?userId=${userId}&take=${take}&page=${page}`)
         return data
     }
@@ -105,8 +106,8 @@ export const CommentsService = (instance: AxiosInstance) => ({
         const {data} = await instance.get<number, { data: Array<CommentResponse> }>(articleId ? `comments?articleId=${articleId}` : `comments`)
         return data
     },
-    async getCommentsByUserId(userId?: number) {
-        const {data} = await instance.get<number, { data: Array<CommentResponse> }>(`comments/u?userId=${userId}`)
+    async getCommentsByUserId(userId: number, take: number = 1, page: number = 1) {
+        const {data} = await instance.get<number, { data: [Array<CommentResponse>, number] }>(`comments/u?userId=${userId}&take=${take}&page=${page}`)
         return data
     },
     async removeComment(commentId) {
