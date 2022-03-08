@@ -14,15 +14,15 @@ export const SearchArticles = ({articlesData, searchHandler, searchStr, setSearc
         <div>
             <div className={styles.searchWrapper}>
                 <div className={styles.searchBlock}>
-                    <SearchIcon/>
+                    <SearchIcon className={styles.searchIconSvg}/>
                     <input value={searchStr} onChange={e => setSearchStr(e.target.value)} placeholder="Поиск"/>
+                    <IconButton style={{color: '#fff'}} onClick={searchHandler}>
+                        <Send/>
+                    </IconButton>
+                    <IconButton style={{color: '#fff'}} onClick={toggleOption}>
+                        <SearchOffIcon/>
+                    </IconButton>
                 </div>
-                <IconButton style={{color: '#fff'}} onClick={searchHandler}>
-                    <Send/>
-                </IconButton>
-                <IconButton style={{color: '#fff'}} onClick={toggleOption}>
-                    <SearchOffIcon/>
-                </IconButton>
             </div>
             <Paper style={!!articlesData.length ? {display: "flex"} : {}} className={styles.listWrapper}>
                 <List>

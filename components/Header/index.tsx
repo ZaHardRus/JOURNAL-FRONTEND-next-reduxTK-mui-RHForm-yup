@@ -6,7 +6,8 @@ import {
     ArrowCircleDown as ArrowIcon,
     Logout as LogoutIcon,
     Menu as MenuIcon,
-    PersonOutline as UserIcon
+    PersonOutline as UserIcon,
+    Edit as EditIcon
 } from '@mui/icons-material';
 import {AuthDialog} from "../AuthDialog/AuthDialog";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks";
@@ -41,11 +42,11 @@ export const Header: React.FC = () => {
                     </Link>
                     <Link href='/write'>
                         <Button className={styles.penButton}>
-                            Новая запись
+                            <EditIcon/>
+                            <span>Новая запись</span>
                         </Button>
                     </Link>
                     <SearchBlock/>
-
                 </div>
                 <div className={styles.rightSide}>
                     {userData

@@ -4,7 +4,7 @@ import styles from './FullPost.module.scss';
 import {PostActions} from '../PostActions/PostActions';
 import {FollowButton} from "../FollowButton";
 import {ArticleResponse} from "../../utils/api/types";
-import {Avatar, Paper, Typography } from '@mui/material';
+import {Avatar, Paper, Typography} from '@mui/material';
 
 interface FullPostProps {
     article: ArticleResponse | any
@@ -13,7 +13,7 @@ interface FullPostProps {
 export const FullPost: React.FC<FullPostProps> = ({article}) => {
     return (
         <Paper elevation={2} className={styles.paper}>
-            <div style={{margin: '0 auto', width: 680}}>
+            <div>
                 <Typography variant="h4" className={styles.title}>
                     {article.title}
                 </Typography>

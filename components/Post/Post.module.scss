@@ -7,39 +7,60 @@
   border-radius: 8px !important;
   margin-bottom: 30px;
 }
-.titleHeader{
+
+.titleHeader {
   display: flex;
   justify-content: space-between;
-  a+a{
+
+  a + a {
     font-size: 12px;
-    color:grey
+    color: grey
   }
 }
-.imageContainer{
+
+.imageContainer {
   display: flex;
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
- img{
-   max-height: 200px;
- }
+
+  img {
+    display: block;
+    max-height: 250px;
+    max-width: 100%;
+  }
 }
 
-.postWrapper{
+.postWrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  .postHeader{
+
+  .postHeader {
     display: flex;
     justify-content: space-between;
   }
-  .postHeaderUser{
+
+  .postHeaderUser {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    p{
+
+    p {
       font-size: 16px;
+    }
+  }
+
+  .postHeaderInfo {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    p+p {
+      font-size: 10px;
+      color: #6d6969
     }
   }
 }

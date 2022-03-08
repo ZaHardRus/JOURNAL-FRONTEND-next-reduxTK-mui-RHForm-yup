@@ -31,10 +31,10 @@ export const SearchBlock = () => {
             {
                 !searchOption &&
                 <div className={styles.searchOptionButtonWrapper}>
-                    <IconButton style={{color:'#fff'}} onClick={toggleOption('users')}>
+                    <IconButton style={{color: '#fff'}} onClick={toggleOption('users')}>
                         <PersonSearchIcon/>
                     </IconButton>
-                    <IconButton style={{color:'#fff'}} onClick={toggleOption('articles')}>
+                    <IconButton style={{color: '#fff'}} onClick={toggleOption('articles')}>
                         <ManageSearchIcon/>
                     </IconButton>
                 </div>
@@ -42,10 +42,13 @@ export const SearchBlock = () => {
             {
                 searchOption === 'users' &&
 
-                <SearchUsers toggleOption={toggleOption(null)} usersData={array} searchHandler={searchUsers}
-                             searchStr={searchStr}
-                             setSearchStr={setSearchStr} setArray={setArray}/>
-
+                <SearchUsers
+                    toggleOption={toggleOption(null)}
+                    usersData={array}
+                    searchHandler={searchUsers}
+                    searchStr={searchStr}
+                    setSearchStr={setSearchStr}
+                    setArray={setArray}/>
             }
             {
                 searchOption === 'articles' &&

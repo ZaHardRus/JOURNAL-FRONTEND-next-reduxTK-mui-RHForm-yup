@@ -26,7 +26,7 @@ export const Post: React.FC<PostProps> = ({
                                           }) => {
     const images = obj['body']?.filter(el => el.type === 'image')?.map(el => el.data.file.url)
     return (
-        <Paper elevation={8} className="p-40" classes={{root: styles.paper}}>
+        <Paper elevation={8} className="p-15" classes={{root: styles.paper}}>
             <div className={styles.postWrapper}>
                 <div className={styles.postHeader}>
                     <Link href={`/users/${user.id}`}>
@@ -34,10 +34,12 @@ export const Post: React.FC<PostProps> = ({
                             <Avatar style={{width:50,height:50}} src={user.avatarUrl}>
                                 {user.fullName}
                             </Avatar>
-                            <p>{user.fullName}</p>
+                            <div className={styles.postHeaderInfo}>
+                                <p>{user.fullName}</p>
+                                <p>{createdAt}</p>
+                            </div>
                         </div>
                     </Link>
-                    <p>{createdAt}</p>
                     <FollowButton id={user.id}/>
                 </div>
                 <Typography variant="h5" className={styles.title}>

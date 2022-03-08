@@ -4,12 +4,10 @@ import {RootState} from "../store";
 
 export interface UserState {
     leftSide: boolean
-    rightSide: boolean
 }
 
 const initialState: UserState = {
-    leftSide: true,
-    rightSide: true
+    leftSide: false,
 }
 
 export const layoutSlice = createSlice({
@@ -20,13 +18,9 @@ export const layoutSlice = createSlice({
         setLeftMenu: (state) => {
             state.leftSide = !state.leftSide
         },
-        setRightMenu: (state) => {
-            state.rightSide = !state.rightSide
-        }
     },
 })
 
-export const {setLeftMenu, setRightMenu} = layoutSlice.actions
+export const {setLeftMenu} = layoutSlice.actions
 export const selectLeftMenu = (state: RootState) => state.layout.leftSide
-export const selectRightMenu = (state: RootState) => state.layout.rightSide
 export const layoutReducer = layoutSlice.reducer
