@@ -11,6 +11,7 @@ interface FullPostProps {
 }
 
 export const FullPost: React.FC<FullPostProps> = ({article}) => {
+    console.log(article.body)
     return (
         <Paper elevation={2} className={styles.paper}>
             <div>
@@ -18,18 +19,18 @@ export const FullPost: React.FC<FullPostProps> = ({article}) => {
                     {article.title}
                 </Typography>
                 <div>
-                    {article.body.map(el => {
+                    {article.body.map((el, i) => {
                             if (el.type === 'image') {
-                                return <div key={el.id} className={styles.editorImage}>
+                                return <div className={styles.editorImage}>
                                     <img alt={el.data.caption} src={el.data.file.url}/>
                                     <span>{!!el.data.caption && el.data.caption}</span>
                                 </div>
                             } else if (el.type === 'paragraph') {
-                                return <Typography className={styles.paragraph} key={el.id}>
+                                return <Typography className={styles.paragraph} key={i}>
                                     {el.data.text}
                                 </Typography>
                             } else if (el.type === 'code') {
-                                return <pre className={styles.code} key={el.id}>
+                                return <pre className={styles.code} key={i}>
                                     {el.data.code}
                                 </pre>
                             }

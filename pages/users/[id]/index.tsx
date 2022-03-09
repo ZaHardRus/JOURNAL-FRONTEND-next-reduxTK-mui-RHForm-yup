@@ -34,7 +34,7 @@ export default function Profile({user, comments, articles, articlesCount, commen
     return (
         <MainLayout contentFullWidth>
             <Paper className='p-20'>
-                <div className="d-flex justify-between">
+                <div className="profile">
                     <UserInfo
                         id={user.id}
                         fullName={user.fullName}
@@ -46,11 +46,14 @@ export default function Profile({user, comments, articles, articlesCount, commen
                     />
                     <div>
                         {currentUser && user.id === currentUser.id &&
-                            <Link href='/users/settings'>
-                                <Button>
-                                    <SettingsIcon/>
-                                </Button>
-                            </Link>}
+                            <div className='settings'>
+                                <Link href='/users/settings'>
+                                    <Button>
+                                        <SettingsIcon/>
+                                    </Button>
+                                </Link>
+                            </div>
+                        }
                         {!currentUser?.id === user.id && <FollowButton id={user.id}/>}
                     </div>
                 </div>

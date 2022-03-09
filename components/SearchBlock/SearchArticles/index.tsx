@@ -15,7 +15,10 @@ export const SearchArticles = ({articlesData, searchHandler, searchStr, setSearc
             <div className={styles.searchWrapper}>
                 <div className={styles.searchBlock}>
                     <SearchIcon className={styles.searchIconSvg}/>
-                    <input value={searchStr} onChange={e => setSearchStr(e.target.value)} placeholder="Поиск"/>
+                    <input
+                        value={searchStr}
+                        onChange={e => setSearchStr(e.target.value)}
+                        placeholder="Поиск по статьям"/>
                     <IconButton style={{color: '#fff'}} onClick={searchHandler}>
                         <Send/>
                     </IconButton>

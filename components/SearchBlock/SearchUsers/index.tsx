@@ -1,9 +1,9 @@
+import React from "react";
+import Link from "next/link";
 import styles from "../SearchBlock.module.scss";
 import {SearchOff as SearchOffIcon, SearchOutlined as SearchIcon, Send} from "@mui/icons-material";
 import {Avatar, IconButton, List, ListItem, Paper} from "@mui/material";
-import Link from "next/link";
 import {FollowButton} from "../../FollowButton";
-import React from "react";
 
 export const SearchUsers = ({usersData, searchHandler, searchStr, setSearchStr, setArray, toggleOption}) => {
     return (
@@ -11,7 +11,10 @@ export const SearchUsers = ({usersData, searchHandler, searchStr, setSearchStr, 
             <div className={styles.searchWrapper}>
                 <div className={styles.searchBlock}>
                     <SearchIcon className={styles.searchIconSvg}/>
-                    <input value={searchStr} onChange={e => setSearchStr(e.target.value)} placeholder="Поиск"/>
+                    <input
+                        value={searchStr}
+                        onChange={e => setSearchStr(e.target.value)}
+                        placeholder="Поиск по пользователям"/>
                     <IconButton style={{color: '#fff'}} onClick={searchHandler}>
                         <Send/>
                     </IconButton>

@@ -16,7 +16,7 @@ interface PostProps {
     likes: Array<number> | []
     dislikes: Array<number> | []
     removeArticleHandler: (id: number) => any
-    createdAt:string
+    createdAt: string
 }
 
 export const Post: React.FC<PostProps> = ({
@@ -24,14 +24,15 @@ export const Post: React.FC<PostProps> = ({
                                               description, tags, imageUrl,
                                               user, likes, dislikes, createdAt, ...obj
                                           }) => {
-    const images = obj['body']?.filter(el => el.type === 'image')?.map(el => el.data.file.url)
+    //const images = obj['body']?.find(el => el.type === 'image')?.map(el => el.data.file.url)
+    const images = obj['body']?.filter(el => el.type === 'image')[0].data.file.url
     return (
         <Paper elevation={8} className="p-15" classes={{root: styles.paper}}>
             <div className={styles.postWrapper}>
                 <div className={styles.postHeader}>
                     <Link href={`/users/${user.id}`}>
                         <div className={styles.postHeaderUser}>
-                            <Avatar style={{width:50,height:50}} src={user.avatarUrl}>
+                            <Avatar style={{width: 50, height: 50}} src={user.avatarUrl}>
                                 {user.fullName}
                             </Avatar>
                             <div className={styles.postHeaderInfo}>
@@ -55,7 +56,9 @@ export const Post: React.FC<PostProps> = ({
                     {description}
                 </Typography>
                 {!!images &&
-                    <div className={styles.imageContainer}>{images.map(el => < img key={el} src={el} alt=""/>)}</div>}
+                    <div className={styles.imageContainer}>
+                        <img src={images} alt=""/>
+                    </div>}
                 <PostActions likes={likes} dislikes={dislikes} removeArticleHandler={removeArticleHandler}
                              articleId={id} userId={user.id}/>
             </div>

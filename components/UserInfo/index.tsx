@@ -1,6 +1,7 @@
 import {Avatar, Typography} from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import styles from './UserInfo.module.scss'
 
 interface UserInfoProps {
     avatarUrl: string
@@ -14,10 +15,10 @@ interface UserInfoProps {
 
 export const UserInfo: React.FC<UserInfoProps> = ({avatarUrl, fullName, id, following, followers, about, link}) => {
     return (
-        <div className='d-flex'>
+        <div className={styles.userInfoWrapper}>
             <Avatar
                 src={avatarUrl}
-                style={{width: 300, height: 300, borderRadius: 6}}
+                className={styles.avatar}
             >
                 {!!fullName && fullName[0]}
             </Avatar>

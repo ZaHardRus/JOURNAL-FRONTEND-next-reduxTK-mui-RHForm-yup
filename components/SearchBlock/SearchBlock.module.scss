@@ -1,7 +1,8 @@
-.searchWrapper{
+.searchWrapper {
   display: flex;
   align-items: center;
 }
+
 .searchBlock {
   width: 310px;
   background-color: #fff;
@@ -36,6 +37,10 @@
     padding-left: 40px;
     transition: all 0.1s ease-in-out;
     border: 1px solid transparent;
+
+    &::placeholder {
+      font-size: 14px;
+    }
 
     &:hover,
     &:focus {

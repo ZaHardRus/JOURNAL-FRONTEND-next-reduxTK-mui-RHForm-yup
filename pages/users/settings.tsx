@@ -7,7 +7,7 @@ import {useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
 import {Api} from "../../utils/api";
 
-export const Settings:NextPage = () => {
+export default function Settings() {
     const userData = useAppSelector(selectUserData)
     const [avatarUrl, setAvatarUrl] = useState(userData.avatarUrl)
     const [fullName, setFullName] = useState(userData.fullName)
