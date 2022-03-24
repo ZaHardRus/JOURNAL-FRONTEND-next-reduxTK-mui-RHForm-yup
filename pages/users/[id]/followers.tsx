@@ -2,14 +2,13 @@ import {MainLayout} from "../../../layouts/MainLayout";
 import {UsersList} from "../../../components/UsersList";
 import {useRouter} from "next/router";
 import {Api} from "../../../utils/api";
-import {useEffect, useState} from "react";
 
-export default function FollowersPage({users,count}) {
+function FollowersPage({users, count}) {
 
     const userId = useRouter().query.id
     const followersRequestHandler = async (take, page) => {
-        const [data,count] =  await Api().users.getFollowers(+userId,take,page)
-        return [data,count]
+        const [data, count] = await Api().users.getFollowers(+userId, take, page)
+        return [data, count]
     }
 
     return (
@@ -22,7 +21,7 @@ export default function FollowersPage({users,count}) {
 export const getServerSideProps = async (ctx) => {
     try {
 
-        const [users,count] = await Api().users.getFollowers(ctx.query.id);
+        const [users, count] = await Api().users.getFollowers(ctx.query.id);
         return {
             props: {
                 users,
@@ -38,3 +37,4 @@ export const getServerSideProps = async (ctx) => {
         },
     };
 };
+export default FollowersPage

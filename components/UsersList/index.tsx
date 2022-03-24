@@ -10,7 +10,7 @@ import {UserResponse} from "../../utils/api/types";
 
 interface UsersListProps {
     usersList: [] | Array<UserResponse>
-    keyword: string
+    keyword?: string
     count: number
     requestHandler: (take: number, currentPage: number, keyword: string) => any
 }

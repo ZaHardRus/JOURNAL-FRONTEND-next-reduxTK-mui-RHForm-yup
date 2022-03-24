@@ -29,7 +29,7 @@ a {
   }
 
   &--full {
-    width: 100%;
+    width: 75%;
     @media (max-width: 740px) {
       width: 100%;
       margin: 40px auto;
@@ -75,6 +75,12 @@ a {
 }
 .profile{
   position: relative;
+  .profile-avatar{
+    width: 60%;
+    height: auto;
+    border-radius: 10%;
+    align-self: center;
+  }
   .settings{
     position: absolute;
     right: 10px;

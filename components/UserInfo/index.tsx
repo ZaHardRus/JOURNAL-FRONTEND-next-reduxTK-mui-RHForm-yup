@@ -18,7 +18,7 @@ export const UserInfo: React.FC<UserInfoProps> = ({avatarUrl, fullName, id, foll
         <div className={styles.userInfoWrapper}>
             <Avatar
                 src={avatarUrl}
-                className={styles.avatar}
+                className={'profile-avatar'}
             >
                 {!!fullName && fullName[0]}
             </Avatar>

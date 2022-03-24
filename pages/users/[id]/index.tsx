@@ -16,7 +16,7 @@ import Box from '@mui/material/Box';
 import {ArticlesList} from '../../../components/ArticlesList';
 import {UserInfo} from "../../../components/UserInfo";
 
-export default function Profile({user, comments, articles, articlesCount, commentsCount}) {
+function Profile({user, comments, articles, articlesCount, commentsCount}) {
 
     const [tabIndex, setTabIndex] = useState('0');
     const handleChange = (event, newValue) => {
@@ -91,6 +91,7 @@ export default function Profile({user, comments, articles, articlesCount, commen
         </MainLayout>
     );
 }
+
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     try {
         const id = +ctx.params.id
@@ -112,3 +113,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         };
     }
 }
+export default Profile

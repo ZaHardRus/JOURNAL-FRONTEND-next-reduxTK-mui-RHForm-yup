@@ -5,7 +5,7 @@ import {FullPost} from '../../components/FullPost';
 import {PostComments} from '../../components/PostComments';
 import {Api} from "../../utils/api";
 
-export default function Home({article}) {
+function Home({article}) {
     return (
         <MainLayout contentFullWidth>
             <FullPost article={article}/>
@@ -31,3 +31,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
     }
 }
+export default Home

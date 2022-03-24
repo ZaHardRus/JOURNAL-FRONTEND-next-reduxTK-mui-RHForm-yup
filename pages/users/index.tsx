@@ -3,7 +3,7 @@ import {MainLayout} from "../../layouts/MainLayout";
 import {UsersList} from "../../components/UsersList";
 import {Api} from "../../utils/api";
 
-export default function UsersPage({users, totalCount, keyword}) {
+function UsersPage({users, totalCount, keyword}) {
     const requestHandler = async (take, page) => {
         const [data, count] = await Api().users.getAllUsers(take, page, keyword)
         return [data, count]
@@ -36,3 +36,4 @@ export const getServerSideProps = async (ctx) => {
         },
     };
 };
+export default UsersPage

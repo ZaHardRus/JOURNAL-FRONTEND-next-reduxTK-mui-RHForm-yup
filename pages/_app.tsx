@@ -32,12 +32,12 @@ App.getInitialProps = wrapper.getInitialAppProps(store => async ({Component, ctx
         store.dispatch(setUserData(userData))
 
     } catch (e) {
-        // if (ctx.asPath === '/write') {
-        //     ctx?.res?.writeHead(302, {
-        //         Location: '/404',
-        //     });
-        //     ctx.res?.end();
-        // }
+        if (ctx.asPath === '/write') {
+            ctx?.res?.writeHead(302, {
+                Location: '/404',
+            });
+            ctx.res?.end();
+        }
     }
     return {
         pageProps: {

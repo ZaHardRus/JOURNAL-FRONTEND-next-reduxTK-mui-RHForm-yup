@@ -1,5 +1,5 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {AppThunk, RootState} from "../store";
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {RootState} from "../store";
 import {UserResponse} from "../../utils/api/types";
 import {HYDRATE} from 'next-redux-wrapper'
 
@@ -11,12 +11,6 @@ export interface UserState {
 const initialState: UserState = {
     data: null
 }
-
-// export const incrementAsync = createAsyncThunk(
-//     'counter/fetchCount',
-//     async () => {
-//     }
-// )
 
 export const userSlice = createSlice({
     name: 'user',

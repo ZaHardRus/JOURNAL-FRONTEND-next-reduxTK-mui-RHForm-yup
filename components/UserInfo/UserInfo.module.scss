@@ -1,15 +1,14 @@
-.userInfoWrapper{
-    display: flex;
-    @media (max-width: 750px) {
-        display: flex;
-        flex-direction: column;
-    }
+.userInfoWrapper {
+  display: flex;
+  flex-direction: column;
+
 }
-.avatar{
-    display: block;
-    min-height: 250px;
-    width: 250px;
-    @media (max-width: 750px) {
-        align-self: center;
-    }
+
+.avatar {
+  display: block;
+  min-height: 250px;
+  width: 250px;
+  @media (max-width: 750px) {
+    align-self: center;
+  }
 }

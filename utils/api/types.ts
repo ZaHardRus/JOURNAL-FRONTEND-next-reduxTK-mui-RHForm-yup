@@ -20,8 +20,8 @@ export interface LoginUserDto {
 export interface UserResponse {
     access_token: string
     email: string
-    following: Array<number> | []
-    followers: Array<number> | []
+    following: Array<number>
+    followers: Array<number>
     fullName: string
     id: number
     avatarUrl: string | null

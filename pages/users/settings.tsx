@@ -7,7 +7,7 @@ import {useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
 import {Api} from "../../utils/api";
 
-export default function Settings() {
+function Settings() {
     const userData = useAppSelector(selectUserData)
     const [avatarUrl, setAvatarUrl] = useState(userData.avatarUrl)
     const [fullName, setFullName] = useState(userData.fullName)
@@ -88,3 +88,4 @@ export default function Settings() {
         </MainLayout>
     );
 }
+export default Settings
