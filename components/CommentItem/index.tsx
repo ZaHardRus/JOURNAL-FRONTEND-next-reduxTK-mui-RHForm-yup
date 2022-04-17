@@ -5,11 +5,12 @@ import styles from './CommentItem.module.scss'
 
 interface CommentItemProps {
     user: UserResponse
-    text: string;
+    text: string
     title: string
+    articleId:number
 }
 
-export const CommentItem: React.FC<CommentItemProps> = ({user, text,title}) => {
+export const CommentItem: React.FC<CommentItemProps> = ({user, text,title,articleId}) => {
     return (
         <Paper className={styles.commentItem} elevation={8} >
             <div className={styles.userInfo}>
@@ -21,7 +22,7 @@ export const CommentItem: React.FC<CommentItemProps> = ({user, text,title}) => {
                 </a>
             </div>
             <p className={styles.text}>{text}</p>
-            <a href="#">
+            <a href={`/news/${articleId}`}>
                 <span className={styles.postTitle}>{title}</span>
             </a>
         </Paper>

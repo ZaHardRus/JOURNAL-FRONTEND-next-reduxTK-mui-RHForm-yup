@@ -10,12 +10,13 @@ import {setUserData} from "../../../redux/slices/user";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-export const AuthFormLogin = ({setForm}) => {
+export const AuthFormLogin = ({setForm,close}) => {
     const dispatch = useAppDispatch()
     const form = useForm({
         mode: 'onSubmit',
         resolver: yupResolver(LoginSchema)
     })
+    console.log(close)
     const onSubmit = async (dto: LoginUserDto) => {
         try {
             const data = await Api().auth.login(dto)
@@ -24,6 +25,7 @@ export const AuthFormLogin = ({setForm}) => {
                 path: '/'
             })
             dispatch(setUserData(data))
+            close()
         } catch (e) {
             console.log(e, 'error AuthFormLogin')
         }
@@ -52,7 +54,7 @@ export const AuthFormLogin = ({setForm}) => {
                         Назад
                     </Button>
                     <Button type='submit' variant='contained' color='primary'>
-                        Зарегистрироваться
+                        Войти
                     </Button>
                 </div>
             </div>

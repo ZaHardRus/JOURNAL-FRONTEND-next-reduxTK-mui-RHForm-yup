@@ -4,7 +4,7 @@ import {
     ThunkAction,
 } from '@reduxjs/toolkit';
 import {userReducer} from "./slices/user";
-import {createWrapper, HYDRATE} from 'next-redux-wrapper';
+import {createWrapper} from 'next-redux-wrapper';
 import {layoutReducer} from "./slices/layout";
 
 export function makeStore() {

@@ -50,23 +50,23 @@ export const Header: React.FC = () => {
                 </div>
                 <div className={styles.rightSide}>
                     {userData
-                        ? <Link href={`/users/${userData.id}`}>
-                            <a className="d-flex align-center">
-                                <Avatar
-                                    className={styles.avatar}
-                                    alt="Remy Sharp"
-                                    src={userData.avatarUrl || ''}
-                                >
-                                    {userData.fullName[0]}
-                                </Avatar>
-                                {userData
-                                    ? <LogoutIcon onClick={logout} style={{color: '#fff'}}/>
-                                    : <ArrowIcon style={{color: '#fff'}}/>}
-                            </a>
-                        </Link>
+                        ? <>
+                            <Link href={`/users/${userData.id}`}>
+                                <a className="d-flex align-center">
+                                    <Avatar
+                                        className={styles.avatar}
+                                        alt="Remy Sharp"
+                                        src={userData.avatarUrl || ''}
+                                    >
+                                        {userData.fullName[0]}
+                                    </Avatar>
+                                </a>
+                            </Link>
+                            <LogoutIcon onClick={logout} style={{color: '#fff'}}/>
+                        </>
                         : <div className={styles.loginButton} onClick={handleClickOpen}>
                             <UserIcon style={{color: '#fff'}}/>
-                            Войти
+                            <span style={{color: '#fff'}}>Войти</span> 
                         </div>
                     }
                 </div>

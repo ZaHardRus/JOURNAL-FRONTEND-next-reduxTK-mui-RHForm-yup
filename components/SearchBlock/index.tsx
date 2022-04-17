@@ -24,6 +24,7 @@ export const SearchBlock = () => {
         return () => {
             setSearchOption(option)
             setSearchStr('')
+            setArray([])
         }
     }
     return (

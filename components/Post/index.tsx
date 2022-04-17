@@ -25,7 +25,7 @@ export const Post: React.FC<PostProps> = ({
                                               user, likes, dislikes, createdAt, ...obj
                                           }) => {
     //const images = obj['body']?.find(el => el.type === 'image')?.map(el => el.data.file.url)
-    const images = obj['body']?.filter(el => el.type === 'image')[0].data.file.url
+    const images = obj['body']?.filter(el => el.type === 'image')[0]?.data?.file?.url
     return (
         <Paper elevation={8} className="p-15" classes={{root: styles.paper}}>
             <div className={styles.postWrapper}>

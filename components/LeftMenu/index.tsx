@@ -34,7 +34,7 @@ export const LeftMenu: React.FC = () => {
                         <Paper>
                             <Link href={obj.path}>
                                 <a>
-                                    <Button color={"primary"} variant={router.pathname === obj.path ? 'outlined' : 'text'}>
+                                    <Button color={"primary"} variant={router.pathname === obj.path ? 'contained' : 'outlined'}>
                                         {obj.icon}
                                         {obj.text}
                                     </Button>

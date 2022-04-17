@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #e9e9ef;
+  //background-color: #e9e9ef;
   font-family: Roboto, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
@@ -41,8 +41,10 @@ a {
   display: flex;
   padding: 80px 30px 0;
   margin: 0 auto;
+  min-height: 100vh;
   .leftSide {
-    width: 30%;
+    width: 25%;
+    //background-color: #f2f2f2;
   }
   @media (max-width: 740px) {
     flex-direction: column;
@@ -62,7 +64,6 @@ a {
 }
 
 .main-layout--white {
-  height: 100vh;
 }
 
 .users-listItem {
@@ -77,6 +78,8 @@ a {
   position: relative;
   .profile-avatar{
     width: 60%;
+    min-height: 100px;
+    max-height: 450px;
     height: auto;
     border-radius: 10%;
     align-self: center;

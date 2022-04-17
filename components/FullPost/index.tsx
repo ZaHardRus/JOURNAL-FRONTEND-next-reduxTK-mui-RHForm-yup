@@ -22,7 +22,7 @@ export const FullPost: React.FC<FullPostProps> = ({article}) => {
                     {article.body.map((el, i) => {
                             if (el.type === 'image') {
                                 return <div className={styles.editorImage}>
-                                    <img alt={el.data.caption} src={el.data.file.url}/>
+                                    <img style={{maxHeight:'70vh'}} alt={el.data.caption} src={el.data.file.url}/>
                                     <span>{!!el.data.caption && el.data.caption}</span>
                                 </div>
                             } else if (el.type === 'paragraph') {

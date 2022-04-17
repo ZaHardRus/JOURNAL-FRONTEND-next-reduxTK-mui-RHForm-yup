@@ -36,6 +36,7 @@ export const CommentsList: React.FC<CommentsListProps> = ({userId, comments, cou
             {arrayComments && arrayComments.map(el => <CommentItem key={el.id}
                                                                    text={el.text}
                                                                    user={el.user}
+                                                                   articleId={el.article.id}
                                                                    title={el.article.title}/>)}
             {!!count && <Paper>
                 <Pagination

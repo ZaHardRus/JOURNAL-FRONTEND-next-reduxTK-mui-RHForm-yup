@@ -25,7 +25,7 @@ export const AuthDialog: React.FC<AuthDialogProps> = ({open, close}) => {
             >
                 {form === 'main' && <AuthFormMain close={close} setForm={setForm}/>}
                 {form === 'registration' && <AuthFormRegistration setForm={setForm}/>}
-                {form === 'login' && <AuthFormLogin setForm={setForm}/>}
+                {form === 'login' && <AuthFormLogin close={close} setForm={setForm}/>}
             </Dialog>
         </div>
     )

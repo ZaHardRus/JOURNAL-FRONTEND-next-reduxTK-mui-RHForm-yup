@@ -51,13 +51,11 @@ export const WriteForm: NextPage<WriteFormProps> = ({data}) => {
             />
             <div className={styles.editorWrapper}>
                 <Editor value={blocks} setBlocks={setBlocks}/>
-                <Button className={styles.button} onClick={onAddArticles} variant='contained' color='primary'>
+                <Button disabled={!title} className={styles.button} onClick={onAddArticles} variant='contained' color='primary'>
                     <MessageIcon/>
                     {data ? 'Сохранить' : 'Опубликовать'}
                 </Button>
             </div>
-
-
         </div>
     )
 }
