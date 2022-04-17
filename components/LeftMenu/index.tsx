@@ -7,7 +7,7 @@ import {
     RecentActorsOutlined,
     StarBorder,
     WhatshotOutlined as FireIcon
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 import styles from './LeftMenu.module.scss';
 import {useRouter} from "next/router";

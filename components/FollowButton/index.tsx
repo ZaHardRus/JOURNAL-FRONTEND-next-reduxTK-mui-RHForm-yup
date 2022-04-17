@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './FollowButton.module.scss'
-import CheckIcon from '@material-ui/icons/CheckOutlined';
-import AddIcon from '@material-ui/icons/AddOutlined';
+import CheckIcon from '@mui/icons-material/CheckOutlined';
+import AddIcon from '@mui/icons-material/AddOutlined';
 import {Api} from "../../utils/api";
 import {useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
