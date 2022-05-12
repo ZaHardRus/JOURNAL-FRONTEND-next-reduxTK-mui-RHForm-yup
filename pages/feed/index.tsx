@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import {ArticlesList} from "../../components/ArticlesList";
 import {MainLayout} from "../../layouts/MainLayout";
 import {Api} from "../../utils/api";
-import {ArticleResponse} from "../../utils/api/types";
+import { ArticleResponse } from "../../utils/api/types";
 
 interface PopularPageProps {
     articles: Array<ArticleResponse>
