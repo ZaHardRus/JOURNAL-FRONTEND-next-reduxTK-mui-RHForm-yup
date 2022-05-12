@@ -1,4 +1,4 @@
-import {Divider, Paper, Typography} from "@material-ui/core";
+import {Divider, Paper, Typography} from "@mui/material";
 import {Comment} from "../Comment";
 import React, {useEffect, useState} from "react";
 import {AddCommentForm} from "../AddCommentForm";
