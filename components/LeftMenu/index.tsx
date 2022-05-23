@@ -19,17 +19,20 @@ import Paper from '@mui/material/Paper';
 export const LeftMenu: React.FC = () => {
     const router = useRouter()
     const currentUser = useAppSelector(selectUserData)
+
     const menu = [
-        {text: 'Свежее', icon: <FireIcon/>, path: '/'},
-        {text: 'Популярное', icon: <StarBorder/>, path: '/popular'},
-        {text: 'Моя лента', icon: <RecentActorsOutlined/>, path: '/feed'},
-        {text: 'Все пользователи', icon: <UsersIcon/>, path: '/users'},
-        {text: 'Подписки', icon: <ListIcon/>, path: `/users/${currentUser?.id}/following`},
+        {text: 'Свежее', icon: <FireIcon/>, path: '/',private:false},
+        {text: 'Популярное', icon: <StarBorder/>, path: '/popular',private:false},
+        {text: 'Моя лента', icon: <RecentActorsOutlined/>, path: '/feed',private:true},
+        {text: 'Все пользователи', icon: <UsersIcon/>, path: '/users',private:false},
+        {text: 'Подписки', icon: <ListIcon/>, path: `/users/${currentUser?.id}/following`,private:true},
     ];
+    const menuVariant = currentUser ? menu : menu.filter(el=>!el.private)
+
     return (
         <div className={styles.menu}>
             <ul>
-                {menu.map((obj) => (
+                {menuVariant.map((obj) => (
                     <li key={obj.path}>
                         <Paper>
                             <Link href={obj.path}>

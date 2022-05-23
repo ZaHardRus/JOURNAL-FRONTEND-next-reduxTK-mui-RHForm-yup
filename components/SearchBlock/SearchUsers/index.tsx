@@ -37,7 +37,7 @@ export const SearchUsers = ({usersData, searchHandler, searchStr, setSearchStr, 
                         </ListItem>)
                     }
                     <ListItem
-                        style={{display: "flex", justifyContent: "center", cursor: "pointer"}}>
+                        style={{display: "flex", justifyContent: "space-between", cursor: "pointer"}}>
                         <div onClick={() => setArray([])}>Закрыть</div>
                         <Link href={{pathname: '/users/', query: {keyword: searchStr}}}>Все</Link>
                     </ListItem>

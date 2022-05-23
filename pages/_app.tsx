@@ -20,7 +20,6 @@ function App({Component, pageProps}) {
                     rel="stylesheet"/>
             </Head>
             <CssBaseline/>
-            <Header/>
             <Component {...pageProps} />
         </>
     );

@@ -16,7 +16,7 @@ export const AuthFormLogin = ({setForm,close}) => {
         mode: 'onSubmit',
         resolver: yupResolver(LoginSchema)
     })
-    console.log(close)
+
     const onSubmit = async (dto: LoginUserDto) => {
         try {
             const data = await Api().auth.login(dto)
@@ -47,6 +47,7 @@ export const AuthFormLogin = ({setForm,close}) => {
                         helperText={form.formState.errors.password?.message}
                         variant='outlined'
                         fullWidth
+                        type={'password'}
                         placeholder='Пароль'/>
                 </div>
                 <div className={style.buttonWrapper}>

@@ -48,7 +48,7 @@ export const SearchArticles = ({articlesData, searchHandler, searchStr, setSearc
                     <ListItem
                         style={{display: "flex", justifyContent: "space-between", cursor: "pointer"}}>
                         <div onClick={() => setArray([])}>Закрыть</div>
-                        {/*<Link href={{pathname: '/news/', query: {keyword: searchStr}}}>Все</Link>*/}
+                        <Link href={{pathname: '/news/', query: {keyword: searchStr}}}>Все</Link>
                     </ListItem>
                 </List>
             </Paper>

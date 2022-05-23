@@ -15,7 +15,8 @@ export const AuthFormRegistration = ({setForm}) => {
 
     const onSubmit = async (dto: CreateUserDto) => {
         try {
-            const data = await Api().auth.registration(dto)
+            await Api().auth.registration(dto)
+                .then(setForm('login'))
         } catch (e) {
             console.log(e, 'error AuthFormLogin')
         }
@@ -37,7 +38,10 @@ export const AuthFormRegistration = ({setForm}) => {
                     {...form.register('password')}
                     error={!!form.formState.errors.password?.message}
                     helperText={form.formState.errors.password?.message}
-                    variant='outlined' fullWidth placeholder='Пароль'/>
+                    variant='outlined'
+                    fullWidth
+                    type={'password'}
+                    placeholder='Пароль'/>
             </div>
             <div className={style.buttonWrapper}>
                 <Button variant='outlined' onClick={() => setForm('main')}>

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import {getTotalPages} from "../utils/pagination/getTotalPages";
 
 export const usePagination = (initialData, countItems) => {
