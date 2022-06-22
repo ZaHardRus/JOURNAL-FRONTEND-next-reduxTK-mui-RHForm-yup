@@ -30,7 +30,7 @@ function Settings() {
             setIsLoading(true)
             const formData = new FormData()
             formData.append('file', e.target.files[0])
-            const {data} = await axios.post('http://localhost:7070/upload', formData, {
+            const {data} = await axios.post('https://journaldb.herokuapp.com/upload', formData, {
                 headers: {
                     'Content-type': 'multipart/form-data',
                 }

@@ -26,7 +26,7 @@ export const Editor: React.FC<EditorProps> = ({setBlocks, value}) => {
                     class: ImageTool,
                     config: {
                         endpoints: {
-                            byFile: 'http://localhost:7070/upload',
+                            byFile: 'https://journaldb.herokuapp.com',
                         },
                         field: 'file'
                     }
