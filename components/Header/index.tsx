@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
     }
     return (
         <div className={styles.headerWrapper}>
-            <Paper classes={{root: styles.root}} square elevation={8}>
+            <Paper className={styles.headerPaper} square elevation={8}>
                 <div className={styles.leftSide}>
                     <IconButton style={{color: '#fff'}} onClick={toggleLeftMenu}>
                         <MenuIcon/>
