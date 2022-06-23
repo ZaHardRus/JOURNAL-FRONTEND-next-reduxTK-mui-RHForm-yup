@@ -49,7 +49,7 @@ export const ArticlesList: React.FC<ArticlesListProps> = ({articles, count, requ
                 <Pagination
                     variant="outlined"
                     color="primary"
-                    className={'d-flex justify-center p-10'}
+                    className={'d-flex justify-center p-10 pagination'}
                     defaultValue={currentPage}
                     onChange={changePageHandler}
                     count={pageCount}

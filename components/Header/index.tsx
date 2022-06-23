@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
                         <MenuIcon/>
                     </IconButton>
                     <Link href="/">
-                        <a className={'d-flex align-center pl-20 pr-20'}>
+                        <a className={'d-flex align-center pl-10 pr-10'}>
                             <img height={40} src="/static/img/newspaper.png" alt="Logo"/>
                         </a>
                     </Link>

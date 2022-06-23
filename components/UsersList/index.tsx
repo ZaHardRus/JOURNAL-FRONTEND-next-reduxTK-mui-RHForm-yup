@@ -47,7 +47,7 @@ export const UsersList: React.FC<UsersListProps> = ({usersList, requestHandler, 
                         <div className='users-listItem' key={el.id}>
                             <Link href={`/users/${el.id}`}>
                                 <div className={styles.listItemUser}>
-                                    <Avatar style={{width:100,height:100}} src={el.avatarUrl}>{el.fullName[0]}</Avatar>
+                                    <Avatar className={styles.avatar} src={el.avatarUrl}>{el.fullName[0]}</Avatar>
                                     <span>{el.fullName}</span>
                                 </div>
                             </Link>
@@ -60,7 +60,7 @@ export const UsersList: React.FC<UsersListProps> = ({usersList, requestHandler, 
                     <Pagination
                         variant="outlined"
                         color="primary"
-                        className={'d-flex justify-center p-10'}
+                        className={'d-flex justify-center p-10 pagination'}
                         defaultValue={currentPage}
                         onChange={changePageHandler}
                         count={pageCount}/>

@@ -33,7 +33,7 @@ function Profile({user, comments, articles, articlesCount, commentsCount}) {
     }
     return (
         <MainLayout contentFullWidth>
-            <Paper className='p-20'>
+            <Paper className='p-20 profile-paper'>
                 <div className="profile">
                     <UserInfo
                         id={user.id}

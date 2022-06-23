@@ -3,4 +3,9 @@
   align-items: center;
   font-size: 16px;
   gap: 4px;
+  @media (max-width: 548px) {
+    span{
+      display: none;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import styles from './WriteForm.module.scss'
-import {Button, TextField} from "@mui/material";
+import {Button, Paper, TextField} from "@mui/material";
 import {NextPage} from "next";
 import dynamic from "next/dynamic";
 import MessageIcon from "@mui/icons-material/TextsmsOutlined";
@@ -40,7 +40,7 @@ export const WriteForm: NextPage<WriteFormProps> = ({data}) => {
 
     }
     return (
-        <div className={styles.writeForm}>
+        <Paper elevation={4} className={styles.writeForm}>
             <TextField
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -56,6 +56,6 @@ export const WriteForm: NextPage<WriteFormProps> = ({data}) => {
                     {data ? 'Сохранить' : 'Опубликовать'}
                 </Button>
             </div>
-        </div>
+        </Paper>
     )
 }

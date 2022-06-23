@@ -42,7 +42,7 @@ export const CommentsList: React.FC<CommentsListProps> = ({userId, comments, cou
                 <Pagination
                     variant="outlined"
                     color="primary"
-                    className={'d-flex justify-center p-10'}
+                    className={'d-flex justify-center p-10 pagination'}
                     defaultValue={currentPage}
                     onChange={changePageHandler}
                     count={pageCount}

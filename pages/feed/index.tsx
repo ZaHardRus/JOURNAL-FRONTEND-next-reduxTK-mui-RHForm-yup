@@ -16,7 +16,10 @@ const FeedPage: NextPage<PopularPageProps> = ({articles, countArticles}) => {
     }
     return (
         <MainLayout>
-            <ArticlesList articles={articles} count={countArticles} requestHandler={requestHandler}/>
+            {!!articles
+                ? <ArticlesList articles={articles} count={countArticles} requestHandler={requestHandler}/>
+                : <p>Подпишитесь на других пользователей, чтобы мы могли формировать ленту по Вашим интересам</p>
+            }
         </MainLayout>
     );
 }
@@ -32,12 +35,12 @@ export const getServerSideProps = async (ctx) => {
         };
     } catch (err) {
         console.log(err);
+        return {
+            props: {
+                articles: null,
+            },
+        };
     }
-    return {
-        props: {
-            articles: null,
-        },
-    };
 };
 
 export default FeedPage;

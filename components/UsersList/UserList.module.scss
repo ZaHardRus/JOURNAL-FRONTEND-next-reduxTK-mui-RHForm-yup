@@ -7,4 +7,12 @@
     font-weight: 600;
     font-size: 20px;
   }
+  @media (max-width: 576px) {
+    .MuiAvatar-root{
+      width: 50px !important;
+    }
+    span{
+      font-size: 14px;
+    }
+  }
 }

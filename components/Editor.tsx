@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import EditorJS, {OutputData} from "@editorjs/editorjs";
 import ImageTool from '@editorjs/image';
+import {Card, Paper} from "@mui/material";
 const CodeTool = require('@editorjs/code');
 
 
@@ -26,7 +27,7 @@ export const Editor: React.FC<EditorProps> = ({setBlocks, value}) => {
                     class: ImageTool,
                     config: {
                         endpoints: {
-                            byFile: 'https://journaldb.herokuapp.com',
+                            byFile: 'https://journaldb.herokuapp.com/upload',
                         },
                         field: 'file'
                     }
@@ -44,6 +45,6 @@ export const Editor: React.FC<EditorProps> = ({setBlocks, value}) => {
         }
     }, [])
     return (
-        <div id='editor'/>
+            <div id='editor'/>
     )
 }

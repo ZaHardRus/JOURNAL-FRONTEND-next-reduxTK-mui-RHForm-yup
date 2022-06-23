@@ -30,8 +30,8 @@ export const FollowButton: React.FC<FollowButtonProps> = ({id}) => {
             {currentUser && currentUser.id !== +id &&
                 <Button onClick={toggleFollow}>
                     {!followed
-                        ? <div className={styles.followButton}> Подписаться <AddIcon/></div>
-                        : <div className={styles.followButton}>Отписаться <CheckIcon/></div>}
+                        ? <div className={styles.followButton}><span>Подписаться</span> <AddIcon/></div>
+                        : <div className={styles.followButton}><span>Отписаться</span> <CheckIcon/></div>}
                 </Button>}
         </div>
     )

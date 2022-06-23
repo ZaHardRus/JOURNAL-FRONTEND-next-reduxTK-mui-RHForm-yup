@@ -4,12 +4,14 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  background-image: linear-gradient(30deg,
-          rgba(2, 0, 36, 1) 0%,
-          rgba(100, 151, 255, 0.77) 37%,
-          rgba(2, 0, 36, 1) 50%,
-          rgba(100, 151, 255, 0.77) 82%,
-          rgba(2, 0, 36, 1) 100%) !important;
+  //background-image: linear-gradient(30deg,
+  //        rgba(2, 0, 36, 1) 0%,
+  //        rgba(100, 151, 255, 0.77) 37%,
+  //        rgba(2, 0, 36, 1) 50%,
+  //        rgba(100, 151, 255, 0.77) 82%,
+  //        rgba(2, 0, 36, 1) 100%) !important;
+  //background-image: url('../../public/static/img/header.jpg');
+  background-color: rgba(0,0,0,.95);
   padding: 0 35px 0 10px;
   height: 80px;
   margin-bottom: 14px;

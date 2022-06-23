@@ -4,6 +4,7 @@ import {LeftMenu} from '../components/LeftMenu';
 import {useAppSelector} from "../redux/hooks";
 import {selectLeftMenu} from "../redux/slices/layout";
 import {Header} from "../components/Header";
+import {Paper} from "@mui/material";
 
 interface MainLayoutProps {
     hideComments?: boolean;
@@ -26,7 +27,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
                 {leftMenuStatus && <div className={'leftSide'}>
                     <LeftMenu/>
                 </div>}
-                <div className={clsx('content', {'content--full': contentFullWidth})}>{children}</div>
+                <Paper elevation={4} className={clsx('content', {'content--full': contentFullWidth})}>{children}</Paper>
             </div>
         </>
 
